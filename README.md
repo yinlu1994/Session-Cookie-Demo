@@ -2,6 +2,16 @@
 ## 案例1.记录用户上次访问时间
 * 需求：当用户哦第一次登陆的时候，提示：你是第一次访问，且记录该次访问时间，下一次访问的时候，获取上一次访问时间且展示出来
 * 技术分析：会话技术，cookies jsp
+### 步骤分析：
+* 创建一个servlet：RemServlet路径：/rem
+* 在servlet中：
+  * 获取指定cookie 例如：名称为 lastTime
+    * request.getCookies()
+  * 判断cookie是否为空
+     * 若为空：提示信息：第一次防卫
+     * 如不为空：获取此cookie的value
+     * 展示信息：你上次访问的时间
+  * 将这次访问时间记录，写回浏览器
 ### jsp
 * java serveer pages:java服务器界面
 * 本质上是一个servlet,在html代码中嵌套java代码
